@@ -1,0 +1,3 @@
+imageai==2.1.6
+opencv==4.5.5
+streamlit==1.8.0
