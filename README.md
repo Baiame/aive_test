@@ -47,7 +47,7 @@ make run
 Otherwise, you can use the following command:
 
 ```bash
-python src/main.py -i <VIDEO_PATH> -o <PATH_OUTPUT_FOLDER> -m <MODEL> -s <SPEED>
+python src/main.py -i <VIDEO_PATH> -m <MODEL> -s <SPEED>
 ```
 
 For the model choice, it can be:
