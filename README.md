@@ -7,7 +7,7 @@ Human tracking implementation in python using YOLOv3.
 ### Clone
 
 ```bash
-git clone ...
+git clone https://github.com/Baiame/aive_test
 cd aive_test
 ```
 
