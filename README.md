@@ -1,6 +1,7 @@
 # Human Tracking
 
 Human tracking implementation in python using YOLOv3.
+Example video here: [miss_dior_hd_output](https://drive.google.com/file/d/1SVD6Lyna6d4TbJnVS28OyNqyUQJ70YBK/view?usp=sharing)
 
 ## Install
 
