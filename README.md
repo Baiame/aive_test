@@ -31,6 +31,10 @@ Sometimes the environment is not properly activated. Try to run:
 conda activate aive
 ```
 
+### Models
+
+Download [YOLOv3](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5/) and [tiny-YOLOv3](https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5/) and place them in the `models` folder.
+
 ## Run
 
 To run the test with the default video and default mode, run:
