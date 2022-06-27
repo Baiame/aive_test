@@ -1,3 +1,4 @@
 imageai==2.1.6
 opencv==4.5.5
+pytest==7.1.1
 streamlit==1.8.0
