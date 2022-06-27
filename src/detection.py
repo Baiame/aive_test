@@ -106,7 +106,7 @@ class HumanVideoDetection:
                             color,
                             2,
                         )
-                        color_idx+=1
+                        color_idx+=1    # Change color only when humain rectangle is drawn
 
                 # Write frame to output
                 output.write(frame)
