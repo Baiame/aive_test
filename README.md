@@ -21,7 +21,7 @@ Have `make` installed. For example using `brew`:
 )
 brew install make
 ```
-
+Install requirements:
 ```bash
 make install
 ```
