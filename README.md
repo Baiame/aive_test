@@ -15,7 +15,7 @@ cd aive_test
 ### Python
 
 Have Python `>=3.9` installed with  `conda`.
-Have make installed. For example using `brew`:
+Have `make installed. For example using `brew`:
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 )
