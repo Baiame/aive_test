@@ -87,9 +87,10 @@ class HumanVideoDetection:
             if ret:
                 data = self.boxes[0][idx]
                 # Get every objects that have been detected on the frame
+                color_idx = 0
                 for n, detected_person in enumerate(data):
                     # Change color for every person
-                    color = self.colors[n]
+                    color = self.colors[color_idx]
                     # Assure it is person and draw rectangle
                     if detected_person["name"] == "person":
                         cv2.rectangle(
@@ -105,6 +106,7 @@ class HumanVideoDetection:
                             color,
                             2,
                         )
+                        color_idx+=1
 
                 # Write frame to output
                 output.write(frame)
