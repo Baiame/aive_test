@@ -1,6 +1,7 @@
 from imageai.Detection import VideoObjectDetection
 import cv2
 import os
+import random
 
 
 class HumanVideoDetection:
@@ -23,7 +24,7 @@ class HumanVideoDetection:
         self.model = model
         self.detection_speed = detection_speed
         self.boxes = []
-        self.colors = [(0, 255, 0), (255, 255, 0), (0, 255, 255), (255, 0, 255)]
+        self.colors = []
         self.fps = None
 
     def get_boxes_video(self):
@@ -90,6 +91,9 @@ class HumanVideoDetection:
                 color_idx = 0
                 for n, detected_person in enumerate(data):
                     # Change color for every person
+                    if color_idx >= len(self.colors):
+                        # Generate color
+                        self.colors.append(random.choices(range(256), k=3))
                     color = self.colors[color_idx]
                     # Assure it is person and draw rectangle
                     if detected_person["name"] == "person":
