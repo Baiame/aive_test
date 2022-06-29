@@ -63,6 +63,36 @@ class HumanVideoDetection:
             return_detected_frame=True,
         )
 
+    def extract_boxes_cropped(self):
+        """
+        Read the video and and store cropped images according to the boxes stored in self.boxes
+        """
+        # Read video
+        cap = cv2.VideoCapture(self.input_path)
+        
+        if not os.path.exists('./temp/'):
+            os.mkdirs('./temp/')
+
+        idx = 0
+        # For each frame
+        while cap.isOpened():
+            ret, frame = cap.read()
+            # If frame is valid
+            if ret:
+                data = self.boxes[0][idx]
+                # Get every objects that have been detected on the frame
+                person_in_frame = 0
+                for n, detected_person in enumerate(data):
+                    if detected_person["name"] == "person":
+                        # Cropping an image
+                        cropped_image = frame[detected_person["box_points"][0]:detected_person["box_points"][2], detected_person["box_points"][1]:detected_person["box_points"][3]]
+                        cv2.imwrite(f"./temp/frame_{idx}_pers_{person_in_frame}.jpg", cropped_image)
+                        person_in_frame += 1
+                idx+=1
+            else:
+                cap.release()
+
+
     def draw_boxes_video(self):
         """
         Read the video and draw the rectangle boxes stored in self.boxes
@@ -126,4 +156,5 @@ class HumanVideoDetection:
         Perform human detection on the video
         """
         self.get_boxes_video()
+        #self.extract_boxes_cropped()
         self.draw_boxes_video()
